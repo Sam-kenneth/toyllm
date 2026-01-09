@@ -4,17 +4,24 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+# Core ML Frameworks (pinned to your training versions)
 tensorflow = "==2.10.0"
-fastapi = "*"
-uvicorn = {extras = ["standard"], version = "*"}
-jinja2 = "*"
-python-multipart = "*"
+numpy = "<2.0.0"
+keras = "==2.10.0"
+
+# RAG & Embeddings
 faiss-cpu = "*"
 langchain = "*"
 langchain-community = "*"
 langchain-huggingface = "*"
 sentence-transformers = "*"
-numpy = "<2.0.0"
+
+# Web Server & Utilities
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+jinja2 = "*"
+python-multipart = "*"
+huggingface_hub = "*"
 
 [requires]
 python_version = "3.10"
