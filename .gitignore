@@ -1,0 +1,39 @@
+# --- Python & Environment ---
+__pycache__/
+*.py[cod]
+*$py.class
+env/
+venv/
+.env
+.venv
+dist/
+build/
+*.egg-info/
+
+# --- Machine Learning & Models ---
+# Don't track large weights - they belong on Hugging Face or Local
+*.tflite
+*.onnx
+*.pkl
+*.pth
+
+# --- Logs & Performance ---
+logs/
+*.log
+.pytest_cache/
+htmlcov/
+.coverage
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# --- Editor & OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Experiment Tracking ---
+# Weights & Biases local metadata
+wandb/

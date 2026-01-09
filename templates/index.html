@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sherlock SLM Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', serif; }
+        .result-card { height: 100%; border-radius: 15px; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .base-header { background: #6c757d; color: white; }
+        .fine-header { background: #0d6efd; color: white; }
+        .rag-header { background: #198754; color: white; }
+    </style>
+</head>
+<body class="container py-5">
+    <h1 class="text-center mb-4"> Finetuned LLM RAG Implementation</h1>
+    
+    <form action="/generate" method="post" class="mb-5">
+        <div class="input-group">
+            <input type="text" name="prompt" class="form-control form-control-lg" placeholder="Enter a mystery prompt..." value="{{ prompt }}">
+            <button type="submit" class="btn btn-primary btn-lg">Generate</button>
+        </div>
+    </form>
+
+    {% if base %}
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card result-card">
+                <div class="card-header base-header">Base Austen</div>
+                <div class="card-body"><em>"{{ base }}"</em></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card result-card">
+                <div class="card-header fine-header">Fine-Tuned Sherlock</div>
+                <div class="card-body"><em>"{{ fine }}"</em></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card result-card">
+                <div class="card-header rag-header">RAG Sherlock (FAISS)</div>
+                <div class="card-body"><strong>"{{ rag }}"</strong></div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
