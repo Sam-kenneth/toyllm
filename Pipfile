@@ -3,5 +3,18 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[packages]
+tensorflow = "==2.10.0"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+jinja2 = "*"
+python-multipart = "*"
+faiss-cpu = "*"
+langchain = "*"
+langchain-community = "*"
+langchain-huggingface = "*"
+sentence-transformers = "*"
+numpy = "<2.0.0"
+
 [requires]
 python_version = "3.10"
